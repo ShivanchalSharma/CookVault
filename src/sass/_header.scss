@@ -1,36 +1,38 @@
 .header {
   grid-area: head;
-  background-color: $color-grey-light-1;
+  background-color: #0a0a1f;
+  border-bottom: 3px solid $color-grad-2;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   &__logo {
     margin-left: 4rem;
-    height: 4.6rem;
+    height: 13rem;
     display: block;
+    filter: drop-shadow(0 0 6px rgba(8, 217, 214, 0.6));
   }
 }
 
 .search {
-  background-color: #fff;
-  border-radius: 10rem;
+  background-color: #12122b;
+  border: 2px solid $color-grad-2;
+  border-radius: 0;
   display: flex;
   align-items: center;
   padding-left: 3rem;
-  transition: all 0.3s;
+  transition: all 0.2s;
 
   &:focus-within {
-    transform: translateY(-2px);
-    box-shadow: 0 0.7rem 3rem rgba($color-grey-dark-1, 0.08);
+    box-shadow: 0 0 1.5rem rgba(8, 217, 214, 0.5);
   }
 
   &__field {
     border: none;
     background: none;
-    font-family: inherit;
-    color: inherit;
-    font-size: 1.7rem;
+    font-family: 'VT323', monospace;
+    color: $color-grey-dark-1;
+    font-size: 1.9rem;
     width: 30rem;
 
     &:focus {
@@ -45,14 +47,14 @@
       width: auto;
 
       &::placeholder {
-        color: white;
+        color: $color-grey-light-3;
       }
     }
   }
 
   &__btn {
     font-weight: 600;
-    font-family: inherit;
+    font-family: 'Press Start 2P', monospace;
   }
 }
 
@@ -72,16 +74,16 @@
 
   &__btn {
     height: 100%;
-    font-family: inherit;
-    color: inherit;
-    font-size: 1.4rem;
+    font-family: 'Press Start 2P', monospace;
+    color: $color-grey-dark-1;
+    font-size: 0.9rem;
     font-weight: 700;
     text-transform: uppercase;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0 1.5rem;
-    transition: all 0.3s;
+    transition: all 0.2s;
 
     display: flex;
     align-items: center;
@@ -89,7 +91,7 @@
     svg {
       height: 2.4rem;
       width: 2.4rem;
-      fill: $color-primary;
+      fill: $color-grad-2;
       margin-right: 0.7rem;
       transform: translateY(-1px);
     }
@@ -100,6 +102,7 @@
 
     &:hover {
       background-color: $color-grey-light-2;
+      color: $color-grad-2;
     }
   }
 }
@@ -107,16 +110,16 @@
 .bookmarks {
   padding: 1rem 0;
   position: absolute;
-  // right: 0;
   right: -2.5rem;
   z-index: 10;
   width: 40rem;
-  background-color: #fff;
-  box-shadow: 0 0.8rem 5rem 2rem rgba($color-grey-dark-1, 0.1);
+  background-color: #12122b;
+  border: 2px solid $color-grad-2;
+  box-shadow: 0 0.8rem 3rem rgba(0, 0, 0, 0.6);
 
   visibility: hidden;
   opacity: 0;
-  transition: all 0.5s 0.2s;
+  transition: all 0.3s;
 
   &__list {
     list-style: none;
@@ -129,7 +132,7 @@
     display: flex;
     align-items: center;
     height: 100%;
-    transition: all 0.3s;
+    transition: all 0.2s;
 
     &:hover {
       background-color: $color-grey-light-2;

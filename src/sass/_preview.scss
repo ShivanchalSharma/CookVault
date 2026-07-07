@@ -5,29 +5,31 @@
       display: flex;
       align-items: center;
       padding: 1.5rem 3.25rem;
-      transition: all 0.3s;
-      border-right: 1px solid #fff;
+      transition: all 0.2s;
+      border-right: 1px solid $color-grey-light-2;
+      border-bottom: 1px solid $color-grey-light-2;
       text-decoration: none;
     }
 
     &:hover {
-      background-color: $color-grey-light-1;
-      transform: translateY(-2px);
+      background-color: $color-grey-light-2;
     }
 
     &--active {
-      background-color: $color-grey-light-1;
+      background-color: $color-grey-light-2;
+      border-left: 3px solid $color-grad-2;
     }
   }
 
   &__fig {
     flex: 0 0 5.8rem;
-    border-radius: 50%;
+    border-radius: 0; // square avatars, retro sprite style
     overflow: hidden;
     height: 5.8rem;
     margin-right: 2rem;
     position: relative;
     backface-visibility: hidden;
+    border: 2px solid #000;
 
     &::before {
       content: '';
@@ -42,7 +44,8 @@
         $color-grad-1,
         $color-grad-2
       );
-      opacity: 0.4;
+      opacity: 0.3;
+      mix-blend-mode: multiply;
     }
 
     img {
@@ -50,7 +53,8 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: all 0.3s;
+      filter: contrast(1.1) saturate(1.2);
+      transition: all 0.2s;
     }
   }
 
@@ -64,12 +68,12 @@
 
   &__title {
     grid-column: 1/-1;
-    font-size: 1.45rem;
-    color: $color-primary;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.95rem;
+    color: $color-grad-2;
     text-transform: uppercase;
     font-weight: 600;
 
-    // This is how text is truncated!
     text-overflow: ellipsis;
     max-width: 25rem;
     white-space: nowrap;
@@ -77,8 +81,8 @@
   }
 
   &__publisher {
-    font-size: 1.15rem;
-    color: $color-grey-dark-2;
+    font-size: 1.4rem;
+    color: $color-grey-light-3;
     text-transform: uppercase;
     font-weight: 600;
   }
@@ -91,7 +95,8 @@
     justify-content: center;
     height: 2rem;
     width: 2rem;
-    border-radius: 10rem;
+    border-radius: 0;
+    border: 1px solid $color-grad-2;
 
     margin-left: auto;
     margin-right: 1.75rem;
@@ -99,7 +104,7 @@
     svg {
       height: 1.2rem;
       width: 1.2rem;
-      fill: $color-primary;
+      fill: $color-grad-2;
     }
   }
 }

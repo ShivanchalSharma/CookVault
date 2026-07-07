@@ -1,20 +1,22 @@
 // $color-primary: #f59a83;
-$color-primary: #f38e82;
-$color-grad-1: #fbdb89;
-$color-grad-2: #f48982;
+$color-primary: #ff2e63;      // neon pink/red
+$color-grad-1: #ff2e63;       // neon pink
+$color-grad-2: #08d9d6;       // neon cyan
 
-$color-grey-light-1: #f9f5f3; // Light background
-$color-grey-light-2: #f2efee; // Light lines
-$color-grey-light-3: #d3c7c3; // Light text (placeholder)
-$color-grey-dark-1: #615551; // Normal text
-$color-grey-dark-2: #918581; // Lighter text
+$color-grey-light-1: #1a1a2e; // was light bg -> now dark panel bg
+$color-grey-light-2: #16213e; // was light lines -> now darker panel lines
+$color-grey-light-3: #4a4a6a; // was placeholder text -> muted purple-grey
+$color-grey-dark-1: #eaeaea;  // was normal text -> now light text on dark bg
+$color-grey-dark-2: #08d9d6;  // was lighter text -> now cyan accent text
+
+$color-bg: #0d0221;           // page background (near-black navy)
 
 $gradient: linear-gradient(to right bottom, $color-grad-1, $color-grad-2);
 
-$bp-large: 78.15em; // 1250px
-$bp-medium: 61.25em; // 980px
-$bp-small: 37.5em; // 600px
-$bp-smallest: 31.25em; // 500px
+$bp-large: 78.15em;
+$bp-medium: 61.25em;
+$bp-small: 37.5em;
+$bp-smallest: 31.25em;
 
 * {
   margin: 0;
@@ -37,11 +39,15 @@ html {
 }
 
 body {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'VT323', monospace;
+  font-size: 1.8rem; // VT323 renders smaller than normal fonts, bump base size
   font-weight: 400;
   line-height: 1.6;
   color: $color-grey-dark-1;
-  background-image: $gradient;
+  background-color: $color-bg;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px),
+    radial-gradient(ellipse at top, #1a1a3a, $color-bg 70%);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: calc(100vh - 2 * 4vw);
@@ -51,10 +57,14 @@ body {
   max-width: 120rem;
   min-height: 117rem;
   margin: 4vw auto;
-  background-color: #fff;
-  border-radius: 9px;
+  background-color: #12122b;
+  border: 3px solid $color-grad-2;
+  border-radius: 0; // sharp pixel corners
   overflow: hidden;
-  box-shadow: 0 2rem 6rem 0.5rem rgba($color-grey-dark-1, 0.2);
+  box-shadow:
+    0 0 0 4px #000,
+    0 0 2rem rgba(8, 217, 214, 0.4),
+    0 2rem 6rem 0.5rem rgba(0, 0, 0, 0.6);
 
   display: grid;
   grid-template-rows: 10rem minmax(100rem, auto);
