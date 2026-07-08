@@ -1,6 +1,6 @@
 plugins:
-  - name: preset-default
-    params:
-      overrides:
-        cleanupIds: false
-        removeUselessDefs: false
+  - removeUselessDefs: false
+  - cleanupIDs: false
+  - removeHiddenElems: false
+  - removeUnusedNS: false
+  - removeViewBox: false
